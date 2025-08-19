@@ -3,7 +3,7 @@ on:
 
 jobs:
   generate-inventory:
-    runs-on: [ self-hosted ]
+    runs-on: [ self-hosted, linux ]
 
     steps:
      
