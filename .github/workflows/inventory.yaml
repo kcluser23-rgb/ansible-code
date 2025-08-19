@@ -3,14 +3,14 @@ on:
 
 jobs:
   generate-inventory:
-    runs-on: [ ansible-master ]
+    runs-on: [ self-hosted ]
 
     steps:
      
 
       - name: Create inventory directory
         run: |
-          sudo -u shruti mkdir -p /home/rochelle/ansible/
+          sudo -u rochelle mkdir -p /home/rochelle/ansible/
           sudo chown -R rochelle:rochelle /home/rochelle/ansible
 
       - name: Generate inventory.yaml
