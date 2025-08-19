@@ -3,7 +3,7 @@ on:
 
 jobs:
   generate-ansible-cfg:
-    runs-on: [ ansible-master ]
+    runs-on: [ self-hosted, linux ]
 
     steps:
 
