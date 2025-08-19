@@ -22,14 +22,14 @@ jobs:
               webservers:
                 hosts:
                   web01:
-                    ansible_host: 10.128.0.4
+                    ansible_host: 10.158.0.2
                     ansible_user: rochelle
                     
 
               databases:
                 hosts:
                   db01:
-                    ansible_host: 10.204.0.2
+                    ansible_host: 10.158.0.3
                     ansible_user: rochelle
                     db_version: 14
                    
