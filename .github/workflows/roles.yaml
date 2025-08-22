@@ -1,0 +1,27 @@
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ansible-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Ansible Role
+        run: |
+          ansible-galaxy install -p /home/rochelle/ansible/roles   geerlingguy.nginx
+      
+      - name: Run Ansible playbook
+        env:
+          ANSIBLE_HOST_KEY_CHECKING: False
+        run: |
+          pwd
+          cp /home/rochelle/ansible/inventory.yaml  /home/rochelle/ansible/roles/inventory.yaml 
+          cp /home/rochelle/ansible/ansible.cfg  /home/rochelle/ansible/roles/ansible.cfg 
+          ansible-playbook  ./ansible/site.yaml -i /home/rochelle/ansible/inventory.yaml  --become
