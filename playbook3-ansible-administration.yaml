@@ -11,9 +11,9 @@
       name: security
       state: present
        
-  - name: create a dravid user profile
+  - name: create a david user profile
     user:
-      name: dravid
+      name: david
       uid: 41003
       shell: /bin/bash
       groups: manage,security
